@@ -1,0 +1,114 @@
+MAP
+  FONTSET "E:/ms4w/apps/etc/fonts.txt"
+  EXTENT -179.99942 -59.484295 180 83.627357
+  IMAGETYPE "png"
+  NAME "QGIS--MAP"
+  SHAPEPATH "E:/ms4w/apps/data/worldmap3857"
+  SIZE 800 800
+  STATUS ON
+  UNITS DD
+
+  OUTPUTFORMAT
+    NAME "png"
+    MIMETYPE "image/png"
+    DRIVER "AGG/PNG"
+    EXTENSION "png"
+    IMAGEMODE RGB
+    TRANSPARENT FALSE
+  END # OUTPUTFORMAT
+
+  PROJECTION
+    "proj=longlat"
+    "datum=WGS84"
+    "no_defs"
+    "init=epsg:3857"
+  END # PROJECTION
+  LEGEND
+    KEYSIZE 20 20
+    KEYSPACING 5 5
+    LABEL
+      SIZE MEDIUM
+      OFFSET 0 0
+      SHADOWSIZE 1 1
+      TYPE BITMAP
+    END # LABEL
+    STATUS OFF
+  END # LEGEND
+
+  QUERYMAP
+    SIZE -1 -1
+    STATUS OFF
+    STYLE HILITE
+  END # QUERYMAP
+
+  SCALEBAR
+    INTERVALS 4
+    LABEL
+      SIZE MEDIUM
+      OFFSET 0 0
+      SHADOWSIZE 1 1
+      TYPE BITMAP
+    END # LABEL
+    SIZE 200 3
+    STATUS OFF
+    UNITS MILES
+  END # SCALEBAR
+
+  WEB
+    FOOTER ""
+    HEADER ""
+    IMAGEPATH "E:/ms4w/tmp/ms_tmp/"
+    TEMPPATH "E:/ms4w/tmp/"
+    IMAGEURL "/tmp/"
+    METADATA
+      "ows_onlineresource"	"http://127.0.0.1:8000/cgi-bin/mapserv.exe?map=E:/ms4w/apps/test2/test.map"
+      "ows_enable_request"	"*"
+      "wfs_encoding"	"UTF-8"
+      "ows_title"	"QGIS-MAP"
+    END # METADATA
+    TEMPLATE "E:/ms4w/apps/test2/test.map.html.tmpl"
+  END # WEB
+
+  LAYER
+    DATA "E:/ms4w/apps/data/worldmap3857/World_region.shp"
+    EXTENT -20037443.7774846 -8285806.11600741 20037508.3427892 18422153.0437227
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"-20037443.7775 -8285806.11601 20037508.3428 18422153.0437"
+      "ows_srs"	"EPSG:3857"
+      "ows_title"	"World_region"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "World_region"
+    PROJECTION
+      "proj=merc"
+      "a=6378137"
+      "b=6378137"
+      "lat_ts=0.0"
+      "lon_0=0.0"
+      "x_0=0.0"
+      "y_0=0"
+      "k=1.0"
+      "units=m"
+      "nadgrids=@null"
+      "wktext"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+      NAME "Single symbol"
+      STYLE
+        COLOR 209 143 80
+      END # STYLE
+      STYLE
+        OUTLINECOLOR 0 0 1
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+END # MAP
